@@ -1,0 +1,16 @@
+# Set a seed for reproducibility
+set.seed(123)
+
+# Create a factor from a random sample of the LETTERS
+sample_factor <- factor(sample(LETTERS, 100, replace = TRUE))
+
+# Display the levels of the factor
+print("All levels:")
+print(levels(sample_factor))
+
+# Extract five levels from the factor
+selected_levels <- sample(levels(sample_factor), 5)
+
+# Display the selected levels
+print("Selected levels:")
+print(selected_levels)
