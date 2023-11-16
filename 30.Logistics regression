@@ -1,0 +1,38 @@
+# Load necessary libraries
+if (!requireNamespace("caTools", quietly = TRUE)) {
+  install.packages("caTools")
+}
+if (!requireNamespace("glmnet", quietly = TRUE)) {
+  install.packages("glmnet")
+}
+library(caTools)
+library(glmnet)
+
+# Load the Iris dataset
+data(iris)
+
+# Set a seed for reproducibility
+set.seed(123)
+
+# Split the dataset into training (80%) and testing (20%) sets
+split <- sample.split(iris$Species, SplitRatio = 0.8)
+train_data <- subset(iris, split == TRUE)
+test_data <- subset(iris, split == FALSE)
+
+# Create logistic regression model using petal width and length as features
+model <- glm(Species ~ Petal.Width + Petal.Length, data = train_data, family = "binomial")
+
+# Predict probabilities on the test set
+probabilities <- predict(model, newdata = test_data, type = "response")
+
+# Convert probabilities to predicted class labels
+predicted_labels <- ifelse(probabilities > 0.5, "virginica", "not_virginica")
+
+# Create a confusion matrix
+conf_matrix <- table(test_data$Species, predicted_labels)
+print("Confusion Matrix:")
+print(conf_matrix)
+
+# Calculate accuracy
+accuracy <- sum(diag(conf_matrix)) / sum(conf_matrix)
+print(paste("Accuracy:", round(accuracy, 2)))
