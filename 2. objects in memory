@@ -1,0 +1,15 @@
+# Display a welcome message
+cat("Welcome to the Object Memory Details Program in R\n")
+
+# Get the list of object names in memory
+object_names <- ls()
+
+# Display details for each object
+for (object_name in object_names) {
+  object_size <- object.size(get(object_name))
+  object_type <- typeof(get(object_name))
+  
+  cat("Object Name:", object_name, "\n")
+  cat("Object Size (bytes):", object_size, "\n")
+  cat("Object Type:", object_type, "\n\n")
+}
