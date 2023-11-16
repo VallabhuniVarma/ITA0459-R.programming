@@ -1,0 +1,21 @@
+# Create a vector
+vector_element <- c(1, 2, 3, 4, 5)
+
+# Create a matrix
+matrix_element <- matrix(6:15, nrow = 2, ncol = 5)
+
+# Create a simple function
+my_function <- function(x) {
+  return(x^2)
+}
+
+# Create a list with the elements
+my_list <- list(
+  vector_element,
+  matrix_element,
+  my_function
+)
+
+# Print the content of the list
+print("List Content:")
+print(my_list)
