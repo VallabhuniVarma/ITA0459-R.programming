@@ -1,0 +1,17 @@
+# Define the input string
+input_string <- "hello world"
+
+# Initialize an empty vector to store unique elements
+unique_elements <- character(0)
+
+# Iterate through each character in the string
+for (char in strsplit(input_string, NULL)[[1]]) {
+  if (!(char %in% unique_elements)) {
+    unique_elements <- c(unique_elements, char)
+    unique_numbers <- c(unique_numbers, num)
+  }
+}
+
+# Display the unique elements
+cat("Unique elements in the string:", unique_elements, "\n")
+cat("Unique numbers in the vector:", unique_numbers, "\n")
