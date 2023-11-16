@@ -1,0 +1,21 @@
+# Define a vector
+my_vector <- c(12, 5, 78, 36, 45, 92, 3, 21)
+
+# Initialize variables to store the maximum and minimum values
+max_value <- my_vector[1]
+min_value <- my_vector[1]
+
+# Iterate through the vector
+for (element in my_vector) {
+  if (element > max_value) {
+    max_value <- element
+  }
+  if (element < min_value) {
+    min_value <- element
+  }
+}
+
+# Print the maximum and minimum values
+cat("Maximum value:", max_value, "\n")
+cat("Minimum value:", min_value, "\n")
+
