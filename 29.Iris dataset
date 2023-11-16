@@ -1,0 +1,32 @@
+# Load the Iris dataset
+data(iris)
+
+# Display the structure of the dataset
+print("Structure of the Iris dataset:")
+str(iris)
+
+# Display the summary statistics of the dataset
+print("Summary statistics of the Iris dataset:")
+summary(iris)
+
+# Display the first few rows of the dataset
+print("First few rows of the Iris dataset:")
+head(iris)
+
+# Display the last few rows of the dataset
+print("Last few rows of the Iris dataset:")
+tail(iris)
+
+# Display the unique species in the dataset
+print("Unique species in the Iris dataset:")
+unique(iris$Species)
+
+# Display the count of each species
+print("Count of each species:")
+table(iris$Species)
+
+# Visualize the distribution of sepal length for each species
+boxplot(Sepal.Length ~ Species, data = iris, main = "Distribution of Sepal Length by Species")
+
+# Visualize the relationship between sepal length and sepal width
+plot(iris$Sepal.Length, iris$Sepal.Width, col = iris$Species, pch = 16, main = "Sepal Length vs Sepal Width", xlab = "Sepal
