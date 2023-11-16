@@ -1,0 +1,18 @@
+# Initialize variables
+a <- 0
+b <- 1
+
+# Initialize an empty vector to store the Fibonacci sequence
+fibonacci_sequence <- numeric(0)
+
+# Calculate the first 10 Fibonacci numbers
+for (i in 1:10) {
+  c <- a + b
+  fibonacci_sequence <- c(fibonacci_sequence, a)
+  a <- b
+  b <- c
+}
+
+# Print the Fibonacci sequence
+cat("The first 10 Fibonacci numbers are:", fibonacci_sequence, "\n")
+
