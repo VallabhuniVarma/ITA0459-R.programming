@@ -1,0 +1,19 @@
+# Display the aim of the program
+cat("This program finds the factors of a given number.\n\n")
+
+# Accept user input for the number
+number <- as.integer(readline("Enter a number: "))
+
+# Initialize a list to store the factors
+factors <- c()
+
+# Find and list the factors
+for (i in 1:number) {
+  if (number %% i == 0) {
+    factors <- c(factors, i)
+  }
+}
+
+# Display the list of factors
+cat("Factors of", number, "are:", factors, "\n")
+
